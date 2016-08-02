@@ -1,4 +1,4 @@
-# Smooch Chat Plugin ![](https://api.travis-ci.org/BuildFire/smoochChatPlugin.svg)
+# Smooch Chat Plugin 
 
 SUPINFO AppFactory plugin for integration with Smooch.io.
 
