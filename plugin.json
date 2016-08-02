@@ -1,0 +1,23 @@
+{
+  "author": "SUPINFO AppFactory",
+  "pluginName": "Smooch Chat",
+  "pluginDescription": "Integrations with your favorite web apps lets you easily talk, support and sell to your customers in a seamless way, so you can focus on delivering the best service.",
+  "supportEmail": "supinfoappfactory@supinfo.com",
+  "supportSite": "http://support.appdocumentation.com/knowledge-base/smooch-chat-plugin-tutorial/",
+  "control": {
+    "content": {
+      "enabled": false
+    },
+    "design": {
+      "enabled": false
+    },
+    "settings": {
+      "enabled": true
+    }
+  },
+  "widget": {
+
+  },
+  "features": [],
+  "languages": ["en"]
+}

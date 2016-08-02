@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app='smoochChatPluginSettings'>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../../../../styles/helper.css" rel="stylesheet">
+  <link href="../../../../styles/siteIcons.css" rel="stylesheet">
+  <!-- JS -->
+
+
+  <!-- JS -->
+  <script src="../../../../scripts/jquery/jquery-1.11.2.min.js"></script>
+  <script src="../../../../scripts/buildfire.js"></script>
+  <script src="../../../../scripts/angular/angular.min.js"></script>
+  <script src="../../../../scripts/angular/ui-bootstrap.min.js"></script>
+  <!--<script src="https://cdn.smooch.io/smooch.min.js"></script>-->
+  <script src="app.js"></script>
+  <script src="app.services.js"></script>
+  <script src="enums.js"></script>
+  <!--
+   <script src="../../../../scripts/angular/angular.min.js"></script>
+   <script src="../../../../scripts/angular/ui-bootstrap.min.js"></script>
+
+   <script src="../../../../scripts/jquery/jquery-1.11.2.min.js"></script>
+   -->
+</head>
+<body>
+<div ng-controller="SettingsHomeCtrl as SettingsHome">
+
+  <div class="item clearfix row">
+    <div class="labels col-md-3 padding-right-zero pull-left">
+      <span>Chat Type</span>
+    </div>
+    <div class="main pull-right col-md-9 padding-left-zero row">
+      <div class="radio radio-primary radio-inline">
+        <input id="channel" type="radio" ng-model="SettingsHome.chatType"
+               ng-value="SettingsHome.CHAT_TYPE.PRIVATE"
+               name="chattype" ng-change="SettingsHome.updateChatType(SettingsHome.CHAT_TYPE.PRIVATE)">
+        <label for="channel">Private chat</label>
+      </div>
+      <div class="radio radio-primary radio-inline">
+        <input id="video" type="radio" ng-model="SettingsHome.chatType"
+               ng-value="SettingsHome.CHAT_TYPE.PUBLIC"
+               name="chattype" ng-change="SettingsHome.updateChatType(SettingsHome.CHAT_TYPE.PUBLIC)">
+        <label for="video">Public chat</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="item clearfix row" ng-if="SettingsHome.data">
+    <br ng-if="SettingsHome.getAPIKeyStatus() != 'true'"/>
+    <div class="main pull-right col-md-9">
+      <div class="alert alert-danger alert-sm text-center" ng-if="SettingsHome.getAPIKeyStatus() != 'true'">
+        {{SettingsHome.getAPIKeyStatus()}}
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--<span>Settings -{{SettingsHome.helloWorld}}</span>-->
+  <div class="item clearfix row margin-bottom-fifteen">
+    <div class="labels col-md-3 padding-right-zero pull-left">
+      <span>API Key:</span>
+    </div>
+    <div class="main col-md-9 pull-right clearfix">
+      <div class="col-md-9 pull-left padding-left-zero">
+        <input id="apiKey" name="apiKey" type="text" class="form-control"
+               placeholder="Enter Smooch chat API key here..."
+               ng-model="SettingsHome.data.settings.apiKey" required>
+      </div>
+
+    </div>
+    </br></br>
+    <div class="labels col-md-3 padding-right-zero pull-left">
+      <span>Chat Header:</span>
+    </div>
+    <div class="main col-md-9 pull-right clearfix">
+      <div class="col-md-9 pull-left padding-left-zero">
+        <input id="headerText" name="apiKey" type="text" maxlength="20" class="form-control"
+               placeholder="How can we help?"
+               ng-model="SettingsHome.data.settings.headerText" required>
+      </div>
+      <!--</br></br>-->
+      <!--<div class="col-md-9 pull-left padding-left-zero">-->
+        <!--<button class="btn btn-success stretch"-->
+                <!--ng-click="SettingsHome.saveApi()"-->
+                <!--ng-disabled="!SettingsHome.data.settings.apiKey">-->
+          <!--Save-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+  </div>
+  <hr class="none">
+  <div class="item clearfix row">
+    <div class="col-md-9 pull-right">
+      <p>Dont have a smooch.io account click <a
+          ng-click="SettingsHome.gotToPage()">here</a> to register</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
