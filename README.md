@@ -1,6 +1,6 @@
 # Smooch Chat Plugin 
 
-SUPINFO AppFactory plugin for integration with Smooch.io.
+Plugin for integration with Smooch.io.
 
 Integrations with your favorite web apps lets you easily talk, support and sell to your customers in a seamless way, so you can focus on delivering the best service.
 
